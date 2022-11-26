@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>LearnSwift02-数据类型及其操作 | Fire Qing的博客小站</title><meta name="author" content="Fire Qing"><meta name="copyright" content="Fire Qing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习Swift的笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LearnSwift02-数据类型及其操作">
+<meta property="og:url" content="https://fireqing.github.io/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="Fire Qing的博客小站">
+<meta property="og:description" content="学习Swift的笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-11-26T07:48:15.000Z">
+<meta property="article:modified_time" content="2022-11-26T10:32:08.761Z">
+<meta property="article:author" content="Fire Qing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fireqing.github.io/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: Fire Qing","link":"链接: ","source":"来源: Fire Qing的博客小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LearnSwift02-数据类型及其操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-26 18:32:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar_xx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 轻松</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Fire Qing的博客小站</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 轻松</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LearnSwift02-数据类型及其操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-26T07:48:15.000Z" title="发表于 2022-11-26 15:48:15">2022-11-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-26T10:32:08.761Z" title="更新于 2022-11-26 18:32:08">2022-11-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Swift/">Swift</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LearnSwift02-数据类型及其操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>一般情况下，不同的数据类型无法直接以 <code>=</code> 转换。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> integer: <span class="type">Int</span> <span class="operator">=</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> decimal: <span class="type">Double</span> <span class="operator">=</span> <span class="number">12.5</span></span><br><span class="line">integer <span class="operator">=</span> decimal</span><br></pre></td></tr></table></figure>
+
+<p>以上代码将会报错：<code>Cannot assign value of type &#39;Double&#39; to type &#39;Int&#39;</code>，不能将Double类型的值，赋值给Int类型的变量。</p>
+<p>在Swift中，需要以显式的方法，将数据类型进行转换，而不能简单的通过赋值进行转换。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">integer <span class="operator">=</span> <span class="type">Int</span>(decimal) <span class="comment">// 12</span></span><br><span class="line"><span class="comment">// 将小数型强转为整型，会丢失精度，只取整数的部分</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="混合数据类型的计算"><a href="#混合数据类型的计算" class="headerlink" title="混合数据类型的计算"></a>混合数据类型的计算</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hourlyRate: <span class="type">Double</span> <span class="operator">=</span> <span class="number">19.5</span></span><br><span class="line"><span class="keyword">let</span> hoursWorked: <span class="type">Int</span> <span class="operator">=</span> <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> totalCost: <span class="type">Double</span> <span class="operator">=</span> hourlyRate <span class="operator">*</span> hoursWorked <span class="comment">// 这一行代码发生错误</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码将会报错：<code>Cannot convert value of type &#39;Int&#39; to expected argument type &#39;Double&#39;</code>。</p>
+<p>在Swift中，不同的数值类型（Int, Double, Float, Decimal等）不能直接进行运算，需要将数值类型转换为统一的数据类型后才可以进行运算。以上的代码，最后的结果<code>totalCost</code>是Double类型，所以可以将其修改为：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> totalCost: <span class="type">Double</span> <span class="operator">=</span> hourlyRate <span class="operator">*</span> <span class="type">Double</span>(hoursWorked)</span><br></pre></td></tr></table></figure>
+
+<p>如此以来，<code>totalCost</code>、<code>hourlyRate</code>、`hoursWorked 均为Double类型。</p>
+<h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>之前的代码，定义变量时都显式的指定了数据类型，即<code>: Int</code>显式定义了整数型，<code>:Double</code>显式定义了浮点型等。Swift中，给定义变量并赋初值以后，无需再显式的指定类型了，Swift编译器会自动通过赋的值推断出变量的类型。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> typeInferredInt <span class="operator">=</span> <span class="number">42</span></span><br></pre></td></tr></table></figure>
+
+<p>按住<code>option</code>，将鼠标移动到变量，Xcode会显式类型推断的信息：</p>
+<p><img src="../../public/img/swift-apprentice/type-inferred.png" alt="type-inferred.png"></p>
+<p>同样的，其他数据类型也可以进行类型推断：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> typeInferedDouble <span class="operator">=</span> <span class="number">3.1</span></span><br><span class="line"><span class="keyword">let</span> typeInferedString <span class="operator">=</span> <span class="string">&quot;hello&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>考虑以下代码对变量的定义：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> wantADouble <span class="operator">=</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>按照上述代码定义，Swift将wantADouble自动推断为Int类型，但是我们想要的是Double类型，那么定义的时候可以用以下三种方法定义：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式1：</span></span><br><span class="line"><span class="keyword">let</span> aDouble <span class="operator">=</span> <span class="type">Double</span>(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式2：</span></span><br><span class="line"><span class="keyword">let</span> aDouble: <span class="type">Double</span> <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式3：</span></span><br><span class="line"><span class="keyword">let</span> aDouble <span class="operator">=</span> <span class="number">3</span> <span class="keyword">as</span> <span class="type">Double</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，更为方便的方法还是这样的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> aDouble <span class="operator">=</span> <span class="number">3.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><ol>
+<li><p>定义一个<code>age1</code>常量并赋值42；定义一个<code>age2</code>常量并赋值为21，使用<code>option</code>点击变量后，查看这两个常量是否都被推断为Int类型了。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age1 <span class="operator">=</span> <span class="number">42</span></span><br><span class="line"><span class="keyword">let</span> age2 <span class="operator">=</span> <span class="number">21</span></span><br><span class="line"></span><br><span class="line"><span class="operator">---</span> </span><br><span class="line"><span class="type">Summary</span></span><br><span class="line"></span><br><span class="line"><span class="type">No</span> overview available.</span><br><span class="line"><span class="type">Declaration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age2: <span class="type">Int</span></span><br></pre></td></tr></table></figure></li>
+<li><p>定义一个常量<code>avg1</code>将其赋值为<code>age1 age2</code>的平均值：<code>(age1 + age2) / 2</code>,使用<code>option</code>点击后查看<code>avg1</code>的数据类型。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> avg1 <span class="operator">=</span> (age1 <span class="operator">+</span> age2) <span class="operator">/</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="operator">---</span></span><br><span class="line"><span class="type">Summary</span></span><br><span class="line"></span><br><span class="line"><span class="type">No</span> overview available.</span><br><span class="line"><span class="type">Declaration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> avg1: <span class="type">Int</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>多个字符（Character）可组成字符串（String）。</p>
+<h4 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h4><p><code>Character</code>数据类型可以存储一个字符，例如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> characterA: <span class="type">Character</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>String</code>是存储多个<code>Character</code>的数据类型，例如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringDog: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;Dog&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="keyword">let</span> stringDog <span class="operator">=</span> <span class="string">&quot;Dog&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h3><p>两个字符串的拼接，只需用运算符 <code>+</code>即可办到</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message <span class="operator">=</span> <span class="string">&quot;Hello &quot;</span> <span class="operator">+</span> <span class="string">&quot;my name is &quot;</span></span><br><span class="line"><span class="keyword">var</span> name <span class="operator">=</span> <span class="string">&quot;fire qing&quot;</span></span><br><span class="line">message <span class="operator">=</span> message <span class="operator">+</span> name</span><br><span class="line">message <span class="comment">// Hello my name is fire qing</span></span><br></pre></td></tr></table></figure>
+
+<p>将字符和字符串拼接，则需要先将字符转为字符串类型后，进行拼接：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> character: <span class="type">Character</span> <span class="operator">=</span> <span class="string">&quot;!&quot;</span></span><br><span class="line">message <span class="operator">=</span> message <span class="operator">+</span> <span class="type">String</span>(character)</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串插值"><a href="#字符串插值" class="headerlink" title="字符串插值"></a>字符串插值</h3><p>可以通过使用<strong>插值(interpolation)</strong> 的方式构造一个字符串，插值的部分可以使用其他的数据类型，如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name <span class="operator">=</span> <span class="string">&quot;fire qing&quot;</span></span><br><span class="line"><span class="keyword">var</span> message <span class="operator">=</span> <span class="string">&quot;Hello, my name is <span class="subst">\(name)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>当插值部分是其他数据类型时：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oneThird <span class="operator">=</span> <span class="number">1.0</span> <span class="operator">/</span> <span class="number">3.0</span></span><br><span class="line"><span class="keyword">var</span> oneString <span class="operator">=</span> <span class="string">&quot;One third is <span class="subst">\(oneThird)</span> as a decimal.&quot;</span></span><br><span class="line">oneString <span class="comment">// One third is 0.3333333333333333 as a decimal.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><p>当一个字符串有很多行，而且又想保持其分行的状态，Swift中也提供了多行字符串的表达方式：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> poem <span class="operator">=</span> <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">床前明月光</span></span><br><span class="line"><span class="string">疑是地上霜</span></span><br><span class="line"><span class="string">举头望明月</span></span><br><span class="line"><span class="string">低头思故乡</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">poem</span><br></pre></td></tr></table></figure>
+
+<h3 id="小练习-1"><a href="#小练习-1" class="headerlink" title="小练习"></a>小练习</h3><ol>
+<li><p>定义<code>firstName</code>和<code>lastName</code>常量，并赋值为你的姓和名。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> firstName <span class="operator">=</span> <span class="string">&quot;fire&quot;</span></span><br><span class="line"><span class="keyword">let</span> lastName <span class="operator">=</span> <span class="string">&quot;qing&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>定义<code>fullName</code>常量，将<code>firstName, lastName</code>拼接起来，中间以空格分隔。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fullName <span class="operator">=</span> firstName <span class="operator">+</span> <span class="string">&quot; &quot;</span> <span class="operator">+</span> lastName</span><br></pre></td></tr></table></figure></li>
+<li><p>使用字符串的插值，定义一个<code>myDetails</code>常量，输出你的名字。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> firstName <span class="operator">=</span> <span class="string">&quot;fire&quot;</span></span><br><span class="line"><span class="keyword">let</span> lastName <span class="operator">=</span> <span class="string">&quot;qing&quot;</span></span><br><span class="line"><span class="keyword">let</span> fullName <span class="operator">=</span> firstName <span class="operator">+</span> <span class="string">&quot; &quot;</span> <span class="operator">+</span> lastName</span><br><span class="line"><span class="keyword">let</span> myDetails <span class="operator">=</span> <span class="string">&quot;Hello, my name is <span class="subst">\(fullName.capitalized)</span>&quot;</span></span><br><span class="line">myDetails</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><p>有时候，需要的数据是成组，成三或成多的；例如，表达一个二维坐标(x, y)，或者三维坐标(x, y, z)。在Swift中，可以通过元组来定义这样的数据类型。</p>
+<p>当一个数据是由多个数据组成时，可以使用元组。例如使用元组定义一个二维坐标，坐标值是整数类型：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coordnidates: (<span class="type">Int</span>, <span class="type">Int</span>) <span class="operator">=</span> (<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// or 元组也可以类型推断</span></span><br><span class="line"><span class="keyword">let</span> coordnidates <span class="operator">=</span> (<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他的数据类型</span></span><br><span class="line"><span class="keyword">let</span> coordnidatesDoubles <span class="operator">=</span> (<span class="number">3.2</span>, <span class="number">4.5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>此外，元组中的数据类型是可以不同的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coodniatesMixed: (<span class="type">Double</span>, <span class="type">Int</span>) <span class="operator">=</span> (<span class="number">3.1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="keyword">let</span> coodniatesMixed <span class="operator">=</span> (<span class="number">3.1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>获取元组中的值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coordnidates <span class="operator">=</span> (<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="keyword">let</span> x <span class="operator">=</span> coordnidates.<span class="number">0</span> <span class="comment">// 2</span></span><br><span class="line"><span class="keyword">let</span> y <span class="operator">=</span> coordnidates.<span class="number">1</span> <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中的0和1，是元组中元素的索引，通过<code>.</code>来调用访问，且索引是从0开始的。</p>
+<p>但是通过索引来访问元组中的值，会让人不了解获取值的具体含义。在Swift中，可以对元组中的每一个数据自定义一个数据名：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coordinatesNamed <span class="operator">=</span> (x: <span class="number">2</span>, y: <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>访问元组内部的值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coordinatesNamed <span class="operator">=</span> (x: <span class="number">2</span>, y: <span class="number">3</span>)</span><br><span class="line"><span class="keyword">let</span> x <span class="operator">=</span> coordinatesNamed.x <span class="comment">// 2</span></span><br><span class="line"><span class="keyword">let</span> y <span class="operator">=</span> coordinatesNamed.y <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>其他访问元组值的方式：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coodinates3D <span class="operator">=</span> (x: <span class="number">1</span>, y: <span class="number">2</span>, z: <span class="number">3</span>)</span><br><span class="line"><span class="keyword">let</span> (x1, y1, z1) <span class="operator">=</span> coodinates3D</span><br></pre></td></tr></table></figure>
+
+<p>其等价于：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coodinates3D <span class="operator">=</span> (x: <span class="number">1</span>, y: <span class="number">2</span>, z: <span class="number">3</span>)</span><br><span class="line"><span class="keyword">let</span> x1 <span class="operator">=</span> coodinates3D.x</span><br><span class="line"><span class="keyword">let</span> y1 <span class="operator">=</span> coodinates3D.y</span><br><span class="line"><span class="keyword">let</span> z1 <span class="operator">=</span> coodinates3D.z</span><br></pre></td></tr></table></figure>
+
+<p>当元组中有一些值不想，不用获取的时候，可以使用占位符 <code>_</code>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (x2, y2, <span class="keyword">_</span>) <span class="operator">=</span> coodinates3D</span><br><span class="line"><span class="comment">// 此时只访问了coodinates3D的x和y，并赋值给x2,y2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="小练习-2"><a href="#小练习-2" class="headerlink" title="小练习"></a>小练习</h3><ol>
+<li><p>定义一个有三个Int类型和一个Double类型元组，用该元组的三个Int表示月、日、年；Double表示该日期的平均温度。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dayTemperatureTuple <span class="operator">=</span> (<span class="number">11</span>, <span class="number">11</span>, <span class="number">2022</span>, <span class="number">12.3</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>将上述元组中的值分别命名为：month, day, year, averageTemperature。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dayTemperatureTuple <span class="operator">=</span> (month: <span class="number">11</span>, day: <span class="number">11</span>, year: <span class="number">2022</span>, averageTemperature: <span class="number">12.3</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>用一行代码，仅获取上述元组的day和averageTemperature。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (<span class="keyword">_</span>, day, <span class="keyword">_</span>, averageTemperature) <span class="operator">=</span> dayTemperatureTuple</span><br><span class="line">day</span><br><span class="line">averageTemperature</span><br></pre></td></tr></table></figure></li>
+<li><p>定义一个元组变量，并尝试改变元组中的值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> personTuple <span class="operator">=</span> (name: <span class="string">&quot;xiaoming&quot;</span>, age: <span class="number">18</span>, gender: <span class="string">&quot;male&quot;</span>)</span><br><span class="line">personTuple.age <span class="comment">// 18</span></span><br><span class="line">personTuple.age <span class="operator">=</span> <span class="number">20</span></span><br><span class="line">personTuple.age <span class="comment">// 20</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="类型别名-Type-Alias"><a href="#类型别名-Type-Alias" class="headerlink" title="类型别名 (Type Alias)"></a>类型别名 (Type Alias)</h3><p>在Swift中，可以通过使用类型别名的方式，将一种数据类型，改名为自定义的名字。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">AnimalString</span> <span class="operator">=</span> <span class="type">String</span></span><br><span class="line"><span class="keyword">var</span> pet: <span class="type">AnimalString</span> <span class="operator">=</span> <span class="string">&quot;Cat&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于一些较为复杂的数据类型，通过类型别名，就能简化使用了：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">Coordinates</span> <span class="operator">=</span> (<span class="type">Int</span>, <span class="type">Int</span>)</span><br><span class="line"><span class="keyword">var</span> xy: <span class="type">Coordinates</span> <span class="operator">=</span> (<span class="number">10</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="协议初探"><a href="#协议初探" class="headerlink" title="协议初探"></a>协议初探</h3><p>在Swift中，有很多数值类的数据类型，如Int, Float, Double, Int8等，但是他们都可以使用相同的运算符。换而言之，如果会使用了Int，其他数值类的数据类型也基本都会了，因为它们的使用方式是类似的。</p>
+<p>这是由于，Swift使用了**协议(Protocol)**，让这些数据类型遵循了某一种统一制定的规则。对于整数，它的协议树可以如下表示：</p>
+<p><img src="/Users/qianguoqing/Documents/hexo-my-blog/hexo-blog/public/img/integer-diagram.png" alt="integer-diagram.png"></p>
+<p>箭头指向的是自身类型所遵循的协议。Swift是面向协议的编程语言，后面将继续学习协议，了解常用的协议，和自定义协议。</p>
+<h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><p><strong>Challenge1: Coordinates</strong></p>
+<p>定义一个<code>coordinates</code>常量，并赋值该元组包含2和3。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coordinates <span class="operator">=</span> (<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Challenge2: 命名Coordinates</strong></p>
+<p>定义一个<code>namedCoordinates</code>，包含row和column。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> namedCoordinates <span class="operator">=</span> (row: <span class="number">5</span>, column: <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Challenge3: Which are valid?</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> character: <span class="type">Character</span> <span class="operator">=</span> <span class="string">&quot;Dog&quot;</span>  <span class="comment">// invalid</span></span><br><span class="line"><span class="keyword">let</span> character: <span class="type">Character</span> <span class="operator">=</span> <span class="string">&quot;🐕&quot;</span>   <span class="comment">// valid</span></span><br><span class="line"><span class="keyword">let</span> string: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;Dog&quot;</span>       <span class="comment">// valid</span></span><br><span class="line"><span class="keyword">let</span> string: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;🐕&quot;</span>        <span class="comment">// valid</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Challege4: Does it compile?</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tuple <span class="operator">=</span> (day: <span class="number">15</span>, month: <span class="number">8</span>, year: <span class="number">2022</span>)</span><br><span class="line"><span class="keyword">let</span> day <span class="operator">=</span> tuple.<span class="type">Day</span></span><br></pre></td></tr></table></figure>
+
+<p>编译失败，因为tuple中没有Day。</p>
+<p><strong>Challege5: Find the error</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name <span class="operator">=</span> <span class="string">&quot;AAA&quot;</span></span><br><span class="line">name <span class="operator">+=</span> <span class="string">&quot; BBB&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>错误在于，name是一个常量，常量不能再进行赋新值了，拼接字符串后赋给name，表示赋了一个新值。</p>
+<p><strong>Challege6: value的值和类型时什么？</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tuple <span class="operator">=</span> (<span class="number">100</span>, <span class="number">1.5</span>, <span class="number">10</span>)</span><br><span class="line"><span class="keyword">let</span> value <span class="operator">=</span> tuple.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>value的值为1.5，数据类型为Double。</p>
+<p><strong>Challege7: month的值时什么？</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tuple <span class="operator">=</span> (day: <span class="number">15</span>, month: <span class="number">8</span>, year: <span class="number">2022</span>)</span><br><span class="line"><span class="keyword">let</span> month <span class="operator">=</span> tuple.month</span><br></pre></td></tr></table></figure>
+
+<p>month的是为8。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://fireqing.github.io">Fire Qing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://fireqing.github.io/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/">https://fireqing.github.io/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fireqing.github.io" target="_blank">Fire Qing的博客小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/11/23/test%E6%96%87%E7%AB%A0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">LearnSwift01-表达式、变量、常量</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar_xx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fire Qing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FireQing"><i class="fab fa-github"></i><span>我的Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FireQing" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">混合数据类型的计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD"><span class="toc-number">3.</span> <span class="toc-text">类型推断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0"><span class="toc-number">4.</span> <span class="toc-text">小练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">5.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">5.1.</span> <span class="toc-text">字符和字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">字符串拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%80%BC"><span class="toc-number">7.</span> <span class="toc-text">字符串插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">8.</span> <span class="toc-text">多行字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0-1"><span class="toc-number">9.</span> <span class="toc-text">小练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">10.</span> <span class="toc-text">元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0-2"><span class="toc-number">11.</span> <span class="toc-text">小练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D-Type-Alias"><span class="toc-number">12.</span> <span class="toc-text">类型别名 (Type Alias)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%88%9D%E6%8E%A2"><span class="toc-number">13.</span> <span class="toc-text">协议初探</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-number">14.</span> <span class="toc-text">挑战</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/" title="LearnSwift02-数据类型及其操作"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LearnSwift02-数据类型及其操作"/></a><div class="content"><a class="title" href="/2022/11/26/LearnSwift02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/" title="LearnSwift02-数据类型及其操作">LearnSwift02-数据类型及其操作</a><time datetime="2022-11-26T07:48:15.000Z" title="发表于 2022-11-26 15:48:15">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/23/test%E6%96%87%E7%AB%A0/" title="LearnSwift01-表达式、变量、常量"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LearnSwift01-表达式、变量、常量"/></a><div class="content"><a class="title" href="/2022/11/23/test%E6%96%87%E7%AB%A0/" title="LearnSwift01-表达式、变量、常量">LearnSwift01-表达式、变量、常量</a><time datetime="2022-11-23T07:42:05.000Z" title="发表于 2022-11-23 15:42:05">2022-11-23</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/10/20/hello-world/" title="Hello World">Hello World</a><time datetime="2022-10-20T12:18:12.199Z" title="发表于 2022-10-20 20:18:12">2022-10-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Fire Qing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的博客小站</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
